@@ -14,7 +14,6 @@ const Home = () => {
 
   const fetchTodos = async () => {
     const data = await getData();
-    console.log(data);
     updateTodos(data);
   };
 
@@ -28,7 +27,7 @@ const Home = () => {
         <Button marginBottom={16} onPress={() => navigate('AddTodo')} label="Adicionar tarefa"/>
         <Button marginBottom={16} onPress={clearDoneTodos} label="Limpar concluidas" color="crimson" />
       </Box>
-      {todos.map((todo: any, index: number) => (
+      {todos?.map((todo: any, index: number) => (
         <Todo key={index}  label={todo?.label} id={todo.id} />
       ))}
     </Container>
