@@ -13,7 +13,7 @@ const storeData = async (value: TodoProps[]) => {
 const getData = async () => {
   try {
     const jsonValue = await AsyncStorage.getItem('todos');
-    return jsonValue !== null ? JSON.parse(jsonValue) : null;
+    return jsonValue !== null ? JSON.parse(jsonValue) : [];
   } catch (e) {
     console.warn(e);
   }
